@@ -71,9 +71,9 @@ class MainActivity : AppCompatActivity() {
         val handler = Handler()
 
         handler.postDelayed({
-            var horas = segundos / 3600
-            var minutos = (segundos % 3600) / 60
-            var segs = segundos % 60
+            var horas = (segundos / 3600).toString().padStart(2, '0')
+            var minutos = ((segundos % 3600) / 60).toString().padStart(2, '0')
+            var segs = (segundos % 60).toString().padStart(2, '0')
 
             var tempo = "$horas:$minutos:$segs"
             tvTimer.text = tempo
